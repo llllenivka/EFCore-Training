@@ -16,17 +16,17 @@
 
 Для работы с __Entity Framework__ Core небходим Nuget-пакет, поэтому установила через интсрумент работы с Nuget в Rider __Microsoft.EntityFrameworkCore.Sqlite__.
 
-![FirstApp-NugetPackage](img/FirstApp/NugetPackage.png)
+![FirstApp-NugetPackage](./img/FirstApp/NugetPackage.png)
 
 ### Работа с базой данных
 
 После добавление неоходимого пакета, можно перейти к созданию модели, в которой описываются данные пользователя.
 
-![FirstApp-User](img/FirstApp/User.png)
+![FirstApp-User](./img/FirstApp/User.png)
 
 Взаимодействие с базой данных в Entity Framework Core происходит посредством специального класса - контекста данных. Поэтому добавила в проект новый класс - __ApplicationDbContext__.
 
-![ApplicationDbContext](img/FirstApp/ApplicationDbContext.png)
+![ApplicationDbContext](./img/FirstApp/ApplicationDbContext.png)
 
 Для работы приложения с базой данной через Entity Framework необходим контекст данных - класс производный от __DbContext__. В данном случае таким контекстом является класс __ApplicationDbContext__.
 
@@ -57,7 +57,7 @@ optionsBuilder.UseSqlite("Data Source=helloapp.db");
 
 Переопределен файл __Program.cs__, в котором работаем с БД. 
 
-![FirstApp-Program](img/FirstApp/Program.png)
+![FirstApp-Program](./img/FirstApp/Program.png)
 
 Используется конструкция using для автоматического вызова __Dispose()__ у ApplicationContext.
 В конструкции создаются два объекта и добавляются в БД с помощью метода __Add()__ и в конце сохраняем изменения методом __SaveChages()__.
@@ -77,11 +77,11 @@ db.SaveChanges();
 
 В результате после запуска программа выведет на консоль:
 
-![FirstApp-OutputConsole](img/FirstApp/OutputConsole.png)
+![FirstApp-OutputConsole](./img/FirstApp/OutputConsole.png)
 
 Поскольку в классе контекста при установке строки подключения к Sqlite указан относительный путь, то после выполнения программы мы можем найти файл базы данных в папке проекта:
 
-![FirstApp-SaveDbFile](img/FirstApp/SaveDbFile.png)
+![FirstApp-SaveDbFile](./img/FirstApp/SaveDbFile.png)
 
 Создание базы данных в EF Core
 С помощью специальных программ, например, DB Browser for SQLite мы можем посмотреть ее содержимое.
